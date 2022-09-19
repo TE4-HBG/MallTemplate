@@ -60,7 +60,7 @@ table, th, td {
     box-sizing: border-box;
     position: absolute;
     display: none;
-    margin-top: 0.5%;
+    margin-top: 4%;
 }
 .popupArrow {
     z-index: 1;
