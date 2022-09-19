@@ -1,12 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="dinner.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <p>test</p>
+
+<body onload=showDinnerSchedule()>
+    <!-- Input -->
+    <div id="input">
+        <h1 style="text-align: center;">Input:</h1>
+
+
+        <!-- Templates -->
+        
+
+
+        
+        <!-- Dinner schedule -->
+        <div id="dinnerScheduleDiv">
+            <h2 style="text-align: center;">Matsedel:</h2>
+            <div  id="dinnerInputForm">
+                <form>
+                    <label for="week">Vecka</label><br>
+                    <input type="text" id="week" name="week" value=""><br>
+                    <label for="monday">Måndag</label><br>
+                    <input type="text" id="monday" name="monday" value=""><br>
+                    <label for="tuseday">Tisdag</label><br>
+                    <input type="text" id="tuesday" name="tuesday" value=""><br>
+                    <label for="wednesday">Onsdag</label><br>
+                    <input type="text" id="wednesday" name="wednesday" value=""><br>
+                    <label for="thursday">Torsdag</label><br>
+                    <input type="text" id="thursday" name="thursday" value=""><br>
+                    <label for="friday">Fredag</label><br>
+                    <input type="text" id="friday" name="friday" value=""><br>
+                </form>
+                <button type="button" onclick=SaveDinnerSchedule()><a>Spara</a></button>
+            </div>
+            
+            <!-- Dinner schedule table -->
+            <div id="dinnerScheduleTable">
+                <form> 
+                    <div>
+                        <table id="dinner"></table>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Popup for dinner schedule -->
+            <span id="popup" class="popupBox">
+                <span class="popupArrow"></span>
+                <span class="popupMessageBox">
+                    <span class="popupMessage">
+                        <p color="white" type="body">
+                            Om det ej serveras mat en dag så skriv bara ett mellanrum! 
+                        </p>
+                    </span>
+                </span>
+            </span>
+        </div>
+
+
+
+
+        
+        <div id="textInputDiv">
+            <h2 style="margin-top: 2%;">Text i mall (LINN sektioner)</h2>
+            <form id="textInputForm">
+                <label for="textInput">Text Input</label><br>
+                <input type="text" id="textInput" name="textInput" value=""><br>
+            </form> 
+        </div>
+    </div>
+    
+
+
+
+    <!-- Preview -->
+    <h1 style="text-align: center;">Förhandsvisning:</h1> 
+    <section id="preview">
+        
+    </section>
+
+
 </body>
-</html>
+</html> 
