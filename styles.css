@@ -36,6 +36,9 @@ table, th, td {
     padding-left: 10%;
     width: 50%;
 }
+#tableRemoveWeek {
+    width: 60px;
+}
 #dinnerInputForm {
     width: 160px;
     overflow: auto;
@@ -49,6 +52,7 @@ table, th, td {
 }
 .dinnerTableRow {
     width: 200px;
+    text-align: center;
 }
 
 
@@ -60,7 +64,6 @@ table, th, td {
     box-sizing: border-box;
     position: absolute;
     display: none;
-    margin-top: 4%;
 }
 .popupArrow {
     z-index: 1;

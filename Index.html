@@ -35,6 +35,17 @@
                     <input type="text" id="friday" name="friday" value=""><br>
                 </form>
                 <button type="button" onclick=SaveDinnerSchedule()><a>Spara</a></button>
+                <!-- Popup for dinner schedule -->
+                <span id="popup" class="popupBox">
+                    <span class="popupArrow"></span>
+                    <span class="popupMessageBox">
+                        <span class="popupMessage">
+                            <p color="white" type="body" id="popupText">
+                                
+                            </p>
+                        </span>
+                    </span>
+                </span>
             </div>
             
             <!-- Dinner schedule table -->
@@ -46,17 +57,6 @@
                 </form>
             </div>
 
-            <!-- Popup for dinner schedule -->
-            <span id="popup" class="popupBox">
-                <span class="popupArrow"></span>
-                <span class="popupMessageBox">
-                    <span class="popupMessage">
-                        <p color="white" type="body">
-                            Om det ej serveras mat en dag så skriv bara ett mellanrum! 
-                        </p>
-                    </span>
-                </span>
-            </span>
         </div>
 
 
