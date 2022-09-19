@@ -111,3 +111,64 @@ p.popupMessage {
     text-transform: none;
     text-align: center;
 }
+.container{
+    height: 750px;
+    margin-left: 25px;
+}
+#border{
+    border-style: solid;
+    border-width: 2px;
+    width: 12.5%;
+    height: 75%;
+}
+#bordersmall{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#bordersmall input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+#bordersmall:hover input ~ .checkmark{
+    background-color: #2196F3;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+#bordersmall:hover input ~ .checkmark::after{
+    display: block;
+}
+
+#bordersmall .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
