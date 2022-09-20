@@ -46,7 +46,7 @@ function ShowDinnerSchedule() { // body onload + update dinner schedule table
   else {
     console.log("Updating dinner schedule, weeks exist");
     for (let i = 0; i < weekList.length; i++) {
-      dinnerList += "<tr><td>" + (weekList[i].week).toString() + "</td>" +  // Only adds the latest dinnerSchedule
+      dinnerList += "<tr><td>" + (weekList[i].week).toString() + "</td>" + 
       "<td>" + (weekList[i].monday).toString() + "</td>" + 
       "<td>" + (weekList[i].tuesday).toString() + "</td>" + 
       "<td>" + (weekList[i].wednesday).toString() + "</td>" +
@@ -76,19 +76,19 @@ function CheckForms() { // True if correct input
     }
   }
 
-  let isWeekUniqe = true;
+  let isWeekUnique = true;
   for (let i = 0; i < input.length; i++) { // Check if week already exists in weekList
     input[i] = document.getElementById(input[i]).value
     for (let w = 0; w < weekList.length; w++) {
       if (input[0] === weekList[w].week) {
         console.log("Week already exists in weekList");
         ShowPopup("Denna veckan finns redan i matsedeln");
-        isWeekUniqe = false;
+        isWeekUnique = false;
       }
     }
   }
 
-  if (isFormsFilled && isWeekUniqe) { return true; } else { return false;}
+  if (isFormsFilled && isWeekUnique) { return true; } else { return false;}
 }
 
 
@@ -108,3 +108,4 @@ function DeleteWeek(weeknr) {
     }
   }
 }
+
