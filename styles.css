@@ -13,14 +13,9 @@ table, th, td {
 
 
 
-/* Split input and preview in two */
+
 #input {
     overflow: auto;
-}
-#preview {
-    width: 1920px;
-    height: 1080px;
-    background-image: url("Images/NTI-bakgrund-hubben.png");
 }
 
 
@@ -38,17 +33,19 @@ table, th, td {
 }
 #tableRemoveWeek {
     width: 60px;
+    text-align:center;
 }
 #dinnerInputForm {
     width: 160px;
     overflow: auto;
     float: left;
 }
-#dinnerScheduleTable { /* work here! */
+#dinnerScheduleTable { 
     
 }
 #weekTableRow {
     width: 50px;
+    text-align: center;
 }
 .dinnerTableRow {
     width: 200px;
