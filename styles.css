@@ -114,7 +114,7 @@ p.popupMessage {
 }
 .mall{
     display: flex;
-    height: 750px;
+    height: 500px;
     margin-left: 100px;
 }
 #border{
@@ -133,7 +133,7 @@ p.popupMessage {
 
 .container {
     display: block;
-    position: relative; top: 375px; right: 205px;
+    position: relative; top: 375px; right: 185px;
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
@@ -147,8 +147,7 @@ p.popupMessage {
     width: 100%;
     height: 100%;
     
-  }
-
+}
 .container input {
     position: absolute;
     opacity: 0;
