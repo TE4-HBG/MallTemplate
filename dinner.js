@@ -25,22 +25,37 @@ function SaveDinnerSchedule() { // Lägg till kod för att spara till databas
     "<td>" + (weekList[(weekList.length -1)].wednesday).toString() + "</td>" +
     "<td>" + (weekList[(weekList.length -1)].thursday).toString() + "</td>" +
     "<td>" + (weekList[(weekList.length -1)].friday).toString() + "</td>" + 
-    "<td style='text-align: center'><button type='button' onclick=SaveDinnerSchedule()><a>x</a></button></td></tr>";
+    "<td style='text-align: center'><button type='button' onclick=DeleteWeek(" + weekList[(weekList.length -1)].week + ")><a>x</a></button></td></tr>";
     document.getElementById('dinner').innerHTML = dinnerList;
   }
 }
 
-function showDinnerSchedule() { // body onload 
+function ShowDinnerSchedule() { // body onload + update dinner schedule table
+  dinnerList = "<tr>"+ 
+  "<td id='weekTableRow'>Vecka</td>" + 
+  "<td class='dinnerTableRow'>Måndag</td>" + 
+  "<td class='dinnerTableRow'>Tisdag</td>" + 
+  "<td class='dinnerTableRow'>Onsdag</td>" + 
+  "<td class='dinnerTableRow'>Torsdag</td>" +
+  "<td class='dinnerTableRow'>Fredag</td>" + 
+  "<td id='tableRemoveWeek'>Ta bort</td></tr>";
   if (weekList.length === 0) {
-    dinnerList = "<tr>"+ 
-    "<td id='weekTableRow'>Vecka</td>" + 
-    "<td class='dinnerTableRow'>Måndag</td>" + 
-    "<td class='dinnerTableRow'>Tisdag</td>" + 
-    "<td class='dinnerTableRow'>Onsdag</td>" + 
-    "<td class='dinnerTableRow'>Torsdag</td>" +
-    "<td class='dinnerTableRow'>Fredag</td>" + 
-    "<td id='tableRemoveWeek'>Ta bort</td></tr>";
+    console.log("Updating dinner schedule, no weeks exist");
     document.getElementById('dinner').innerHTML = dinnerList;
+  }
+  else {
+    console.log("Updating dinner schedule, weeks exist");
+    for (let i = 0; i < weekList.length; i++) {
+      dinnerList += "<tr><td>" + (weekList[i].week).toString() + "</td>" +  // Only adds the latest dinnerSchedule
+      "<td>" + (weekList[i].monday).toString() + "</td>" + 
+      "<td>" + (weekList[i].tuesday).toString() + "</td>" + 
+      "<td>" + (weekList[i].wednesday).toString() + "</td>" +
+      "<td>" + (weekList[i].thursday).toString() + "</td>" +
+      "<td>" + (weekList[i].friday).toString() + "</td>" + 
+      "<td style='text-align: center'><button type='button' onclick=DeleteWeek(" + weekList[i].week + ")><a>x</a></button></td></tr>";
+      document.getElementById('dinner').innerHTML = dinnerList;
+    }
+    
   }
 }
 
@@ -54,7 +69,7 @@ function CheckForms() { // True if correct input
     if (document.getElementById(input[i]).value === "") {
         console.log("Incorrect input");
         document.getElementById(input[i]).style.borderColor = "red";     // Add text that tells user to put no dinner days as blankspace? 
-        showPopup("Om det ej serveras mat en dag så skriv bara ett mellanrum!");
+        ShowPopup("Om det ej serveras mat en dag så skriv bara ett mellanrum!");
         isFormsFilled = false;
     } else {
         document.getElementById(input[i]).style.borderColor = "";
@@ -67,7 +82,7 @@ function CheckForms() { // True if correct input
     for (let w = 0; w < weekList.length; w++) {
       if (input[0] === weekList[w].week) {
         console.log("Week already exists in weekList");
-        showPopup("Denna veckan finns redan i matsedeln");
+        ShowPopup("Denna veckan finns redan i matsedeln");
         isWeekUniqe = false;
       }
     }
@@ -78,8 +93,18 @@ function CheckForms() { // True if correct input
 
 
 
-function showPopup(message) {
+function ShowPopup(message) {
   document.getElementById('popup').style.display = "block";
   document.getElementById('popupText').innerHTML = message;
   setTimeout(() => document.getElementById('popup').style.display = "none", 4500);
+}
+
+function DeleteWeek(weeknr) {
+  for (let i = 0; i < weekList.length; i++) {
+    if (parseInt(weekList[i].week) === weeknr) {
+      console.log("Week " + weeknr + " removed");
+      weekList.splice(i, 1);
+      ShowDinnerSchedule();
+    }
+  }
 }
