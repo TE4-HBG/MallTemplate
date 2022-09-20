@@ -21,6 +21,7 @@ table, th, td {
 
 
 
+
 /* Input styling */
 #dinnerScheduleDiv {
     overflow: auto;
@@ -111,3 +112,80 @@ p.popupMessage {
     text-transform: none;
     text-align: center;
 }
+.mall{
+    display: flex;
+    height: 750px;
+    margin-left: 25px;
+}
+#border{
+    align-items: center;
+    border-width: 2px;
+    margin-left: 25px;
+    width: 12.5%;
+    height: 50%;
+}
+
+#mallrutor{
+    width: 100%;
+    height: 100%;
+}
+
+
+.container {
+    display: block;
+    position: relative; top: 375px; right: 205px;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-style: solid;
+    border-width: 2px;
+    width: 100%;
+    height: 100%;
+    
+  }
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(156, 153, 153);
+    border-radius: 50%;
+}
+
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    top: 9px;
+   left: 9px;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: lightblue  ;
+}
+
