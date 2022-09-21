@@ -2,10 +2,12 @@ body {
     margin-left: 0px;
     margin-bottom: 0px;
     margin-right: 0px;
+    
 }
 input { /* Had to overwrite all input fields as divs enclosing inputs caused unnecessary padding. */
     padding-left: 0% !important;
     padding-right: 0% !important;
+    
 }
 table, th, td {
     border: 1px solid black;
