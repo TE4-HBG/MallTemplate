@@ -73,6 +73,10 @@ table, th, td {
 }
 .textArea {
     height: 50px;
+    width: 510px;
+}
+.previewTemplateButton {
+    float: right;
 }
 
 
