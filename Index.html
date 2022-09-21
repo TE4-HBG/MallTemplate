@@ -214,15 +214,24 @@
         <!-- Input for templates -->
         <div class="templateInputDiv">
             <div class="inputBox">
-                <img src="Images/mall1Rutor.svg" class="templateInputImg">
+                <img id="imgInput1"src="Images/mall1Rutor.svg" class="templateInputImg">
                 <div class="inputDiv">
-                    <form id="textInputForm">
-                        <label for="textInput">Text ruta:</label><br>
-                        <textarea type="text" id="textInput" name="textInput" value="" class="textArea"></textarea>
-                    </form> 
+                    <label for="textInput">Text ruta:</label><br>
+                    <textarea type="text" id="textInput1" name="textInput" value="" class="textArea"></textarea><br>
+                    <label for="img">Bild:</label><br>
+                    <input type="file" id="img" name="img" accept="image/*">
+                    <input type="submit" value="Ladda upp"><br>
+                    <label for="img">Video:</label><br>
+                    <input type="file" id="img" name="img" accept="image/*">
+                    <input type="submit" value="Ladda upp">
+                    <br>
+                    <br> <!-- Number of br varies depending on above content  -->
+                    <button class="previewTemplateButton" type='button' onclick="">Visa</button>
                 </div>
             </div>
         </div> 
     </div>
+    <script src="templates.js"></script>
+    <script src="inputBox.js"></script>
 </body>
 </html> 
