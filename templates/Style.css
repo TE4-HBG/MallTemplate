@@ -1,0 +1,12 @@
+body {
+    margin-top: 0px;
+    height: 1920px;
+    width: 1080px;
+    background-image: url(../Images/mall1.svg);
+    background-repeat: no-repeat;
+    background-size: 1080px 1920px;
+}
+
+html {
+    margin-top: 0px;
+}

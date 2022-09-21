@@ -24,6 +24,60 @@
             <span class="checkmark"></span>
             </label>
             </h3>
+            <div id=border>
+                <img src="Images/mall2Rutor.svg" alt="" id=mallrutor_two>
+                
+            </div>
+            <div class=bordersmall>
+               <h4 id="radio_button">
+                <label class="container" id="option_two"> Option two
+                <input type="radio"  name="Option two">
+                <span class="checkmark"></span>
+                </label>
+                </h4>
+                
+            </div>
+    
+            <div id=border>
+                <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_three>
+                
+            </div>
+            <div class=bordersmall>
+               <h4 id=radio_button>
+                <label class="container" id=option_three> Option three
+                <input type="radio"  name="Option three">
+                <span class="checkmark"></span>
+                </label>
+                </h4>
+            </div>
+    
+            <div id=border>
+                <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_four>
+                
+            </div>
+            <div class=bordersmall>
+               <h4 id=radio_button>
+                <label class="container" id=option_three> Option four
+                <input type="radio"  name="Option four">
+                <span class="checkmark"></span>
+                </label>
+                </h4>
+                
+            </div>
+    
+            <div id=border>
+                <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_five>
+               
+            </div>
+            <div class=bordersmall>
+               <h4 id=radio_button>
+                <label class="container" id=option_five onclick=SaveTemplateNum(5)> Option five
+                <input type="radio"  name="Option five" >
+                <span class="checkmark"></span>
+                </label>
+                </h4>
+                
+            </div> 
             
         </div>
         
@@ -141,6 +195,26 @@
                 <input type="text" id="textInput" name="textInput" value=""><br>
             </form> 
         </div>
+        <!-- Input for templates -->
+        <div class="templateInputDiv">
+            <div class="inputBox">
+                <img id="imgInput1"src="Images/mall1Rutor.svg" class="templateInputImg">
+                <div class="inputDiv">
+                    <label for="textInput">Text ruta:</label><br>
+                    <textarea type="text" id="textInput1" name="textInput" value="" class="textArea"></textarea><br>
+                    <label for="img">Bild:</label><br>
+                    <input type="file" id="img" name="img" accept="image/*">
+                    <input type="submit" value="Ladda upp"><br>
+                    <label for="img">Video:</label><br>
+                    <input type="file" id="img" name="img" accept="image/*">
+                    <input type="submit" value="Ladda upp">
+                    <br>
+                    <br> <!-- Number of br varies depending on above content  -->
+
+    <button class="previewTemplateButton" type='button' onclick=ShowTemplate()>Visa</button>
+                </div>
+            </div>
+        </div> 
     </div>
     
 
