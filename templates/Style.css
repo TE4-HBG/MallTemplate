@@ -1,3 +1,25 @@
-.new_text{
+html {
+    height: 1920px;
+    width: 1080px;
 
+}
+
+body {
+   height: 100%;
+   background-image: url(../Images/mall1Rutor.svg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+
+#new_text{
+    color: yellow;
+   
+}
+
+#mall_image{
+    overflow: hidden;
+    width: 75%;
+    height: 75%;
 }

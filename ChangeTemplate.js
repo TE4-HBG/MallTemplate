@@ -1,19 +1,22 @@
 class ChangeTemplate{
-    constructor(TemplateNum,  Img_change,  Text_change){
-        TemplateNum.this = TemplateNum;
-        Img_change.this = Img_change;
-        Text_change.this = Text_change;
-   
+    constructor(TemplateNumber,  Img_change,  Text_change){
+        this.TemplateNumber = TemplateNumber;
+        this.Img_change = Img_change;
+        this.Text_change = Text_change;
     }
-    
 }
-
-function Test(templateNumber) {
-    let templateNum = templateNumber
+var templateNum = 0;
+function SaveTemplateNum(templateNumber) {
+    templateNum = templateNumber;
+    console.log(templateNum);
 }
-
 function ShowTemplate(){
-  const templateToChange = new ChangeTemplate(templateNum,0,document.getElementById("textInput1").value);
-  console.log(templateToChange);
+    const templateToChange = new ChangeTemplate(parseInt(templateNum),0,document.getElementById("textInput1").value);
+    localStorage.setItem("ChangeTemplate",JSON.stringify(templateToChange));
+    console.log(templateToChange.Text_change);
 }
-
+function PreviewTemplate() {
+    console.log(JSON.parse(localStorage.getItem("ChangeTemplate")).Text_change);
+    document.getElementById('new_text').innerHTML = JSON.parse(localStorage.getItem("ChangeTemplate")).Text_change;
+    console.log(JSON.parse(localStorage.getItem("ChangeTemplate")).Text_change);
+}
