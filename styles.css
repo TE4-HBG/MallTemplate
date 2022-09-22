@@ -194,4 +194,26 @@ p.popupMessage {
    border-radius: 50%;
    background: lightblue  ;
 }
+.grid-container{
+    touch-action: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 400px 60px 400px 60px ;
+    grid-template-areas: 
+      "header header header header"
+      ""
+      "footer footer footer footer"
+      "";
+    gap: 10px;
+    background-color: teal;
+    padding: 10px;
+}
+
+.grid-container > div{
+
+background-color: rgba(255,255,255,0.80);
+border: 1 px solid;
+text-align: center;
+font-size: 30px;
+}
 
