@@ -6,9 +6,10 @@ class ChangeTemplate{
     }
 }
 var templateNum = 0;
-function SaveTemplateNum(templateNumber) {
-    templateNum = templateNumber;
-    console.log(templateNum);
+function SaveTemplateNum(arr) {
+    
+    console.log(arr);
+
 }
 function ShowTemplate(){
     const templateToChange = new ChangeTemplate(parseInt(templateNum),0,document.getElementById("textInput1").value);
