@@ -1,7 +1,6 @@
 body {
-    margin-left: 0px;
-    margin-bottom: 0px;
-    margin-right: 0px;
+    margin: 0;
+    background-color: white !important;
 }
 input { /* Had to overwrite all input fields as divs enclosing inputs caused unnecessary padding. */
     padding-left: 0% !important;
@@ -115,85 +114,7 @@ p.popupMessage {
     text-transform: none;
     text-align: center;
 }
-.mall{
 
-    display: grid;
-    grid-template-columns: auto,auto,auto,auto,auto;
-    gap: 10px;
-    padding: 10px;
-
-}
-#border{
-    align-items: center;
-    border-width: 2px;
-    margin-left: 25px;
-    width: 12.5%;
-    height: 50%;
-}
-
-#mallrutor{
-    width: 100%;
-    height: 100%;
-}
-
-
-.container {
-    display: block;
-    position: relative; top: 375px; right: 205px;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border-style: solid;
-    border-width: 2px;
-    width: 100%;
-    height: 100%;
-    
-  }
-
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    
-}
-
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: rgb(156, 153, 153);
-    border-radius: 50%;
-}
-
-.container:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.container .checkmark:after {
-    top: 9px;
-   left: 9px;
-   width: 8px;
-   height: 8px;
-   border-radius: 50%;
-   background: lightblue  ;
-}
 .grid-container{
     touch-action: none;
     display: grid;
@@ -201,19 +122,24 @@ p.popupMessage {
     grid-template-rows: 400px 60px 400px 60px ;
     grid-template-areas: 
       "header header header header"
-      ""
+      "
       "footer footer footer footer"
       "";
     gap: 10px;
-    background-color: teal;
+   
     padding: 10px;
+    background-color: rgb(49, 49, 49);
 }
 
 .grid-container > div{
-
-background-color: rgba(255,255,255,0.80);
-border: 1 px solid;
 text-align: center;
 font-size: 30px;
 }
+img{
+    width:1fr;
+    height:400px;
+}
 
+.checkbox{
+    background-color: rgb(61, 61, 61);
+}
