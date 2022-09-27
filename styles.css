@@ -1,10 +1,13 @@
 body {
-    margin: 0;
-    background-color: white !important;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    
 }
 input { /* Had to overwrite all input fields as divs enclosing inputs caused unnecessary padding. */
     padding-left: 0% !important;
     padding-right: 0% !important;
+    
 }
 table, th, td {
     border: 1px solid black;
@@ -12,50 +15,53 @@ table, th, td {
 
 
 
-/* Split input and preview in two */
+
 #input {
     overflow: auto;
 }
-#preview {
-    width: 1920px;
-    height: 1080px;
-    background-image: url(Images/NTI-bakgrund-hubben.png);
+
+#FormsEditable {
+    width: 48%;
+    float: right;
+    text-align: center;
 }
 
-
-
-
-
-/* Input styling */
+/* dinner styling */
 #dinnerScheduleDiv {
-    overflow: auto;
-    float: right;
-    padding-right: 5%;
+    float: left;
+    border: 1px solid black;
+    margin-left: 20px; 
+    margin-top: 20px;
+    width: 50%;
+}
+#dinner {
+    width: 25%;
+    position: absolute;
+    padding-left: 10px;
 }
 #textInputDiv {
     padding-left: 10%;
-    width: 50%;
+    width: 25%;
 }
 #tableRemoveWeek {
     width: 60px;
+    text-align:center;
 }
 #dinnerInputForm {
-    width: 160px;
     overflow: auto;
-    float: left;
-}
-#dinnerScheduleTable {
-    
+    float: right;
+    width: 40%;
+    text-align: center;
 }
 #weekTableRow {
-    width: 50px;
+    width: 10px;
+    height: 10px;
+    text-align: center;
 }
 .dinnerTableRow {
     width: 200px;
     text-align: center;
 }
-
-
 
 /* popup */
 .popupBox {
@@ -114,7 +120,66 @@ p.popupMessage {
     text-transform: none;
     text-align: center;
 }
-
+#MatsedelBorder {
+    border: 1px solid black;
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+#WeekBorder {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+#Heading {
+    text-align: center;
+}
+.MatsedelDiv {
+    /* EMPTY */
+}
+#WholeMatsedelBoard {
+    border: 2px solid black;
+    height: 500px;
+    width: 60%;
+    float: right;
+    margin: 1px;
+}
+#Forms {
+    border: 2px solid black;
+    width: 39%;
+    padding: 2px;
+    margin: 10px;
+    float:left;
+}
+.AlignCenter {
+    display: inline;
+}
+.MatsedelText {
+    border: 1px solid black;
+    text-align: center;
+    width: 200px;
+}
+.UpdateForms {
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 90%;
+    margin: 8px;
+}
+#Week {
+    width: 50%;
+}
+.AlignEnd {
+    text-align: left;
+}
+#weekTableRow {
+width: 50px;
+text-align: center;
+}
+#tableRemoveWeek {
+width: 60px;
+text-align:center;
+}
+/*INPUT IMG CSS*/
 .grid-container{
     touch-action: none;
     display: grid;
@@ -122,7 +187,7 @@ p.popupMessage {
     grid-template-rows: 400px 60px 400px 60px ;
     grid-template-areas: 
       "header header header header"
-      "
+      
       "footer footer footer footer"
       "";
     gap: 10px;
@@ -130,7 +195,6 @@ p.popupMessage {
     padding: 10px;
     background-color: rgb(49, 49, 49);
 }
-
 .grid-container > div{
 text-align: center;
 font-size: 30px;
@@ -142,4 +206,13 @@ img{
 
 .checkbox{
     background-color: rgb(61, 61, 61);
+}
+#Button_Input{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#BorderButton {
+    width: 200px;
+    height: 50px;
 }

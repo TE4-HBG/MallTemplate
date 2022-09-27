@@ -1,164 +1,128 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="inputBox.js"></script>
     <script src="dinner.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body onload=showDinnerSchedule()>
-    <!-- Input -->
-    
+<body onload=ShowDinnerSchedule()>
+    <div class=grid-container>
+<div>
+<img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
+</div>
+<div>
+<img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
+</div>
+<div>
+<img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
+</div>
+<div>
+<img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
+</div>
+<div>
+<img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
+</div>
+<div class="checkbox" id="option_one">Option one
+<button onclick="document.getElementById('FormsEditale').innerHTML=PrintInputBorder('TEXT')"></button>
+</div>
+<div class="checkbox" id="option_two"> option two
+<input type="checkbox" name="Option two" value="2">
+</div>
+<div class="checkbox" id="option_three"> Option Three
+<input type="checkbox" name="Option Three" value="3">
+</div>
+<div class="checkbox" id ="option_four"> Option four
+<input type="checkbox" name="Option four" value="4">
 
-            <div class=grid-container>
-        <div>
-            <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
-        </div>
-        <div>
-            <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
-        </div>
-        <div>
-            <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
-        </div>
-        <div>
-            <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
-        </div>
-        <div>
-            <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
-        </div>
-        <div class="checkbox">Option one
-            <input type="checkbox" name="Option one" value="1">
-        </div>
-        <div class="checkbox"> option two
-            <input type="checkbox" name="Option two" value="2">
-        </div>
-        <div class="checkbox"> Option Three
-            <input type="checkbox" name="Option Three" value="3">
-        </div>
-        <div class="checkbox"> Option four
-            <input type="checkbox" name="Option four" value="4">
+</div>
+<div class="checkbox" id=option_five> Option five
+<input type="checkbox" name="Option five" value="5">
+</div>
+<div>
+<img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
+</div>
+<div>
+<img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
+</div>
+<div>
+<img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
+</div>
+<div>
+<img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
+</div>
+<div>
+<img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
+</div>
+<div class="checkbox" id="option_six"> Option six
+<input type="checkbox" name="Option six" value="6">
+</div>
+<div class="checkbox" id="option_seven"> Option seven
+<input type="checkbox" name="Option seven" value="7">
+</div>
+<div class="checkbox" id=option_eight> Option eight
+<input type="checkbox" name="Option eight" value="8">
+</div>
+<div class="checkbox" id="option_nine"> Option nine
+<input type="checkbox" name="Option nine" value="9">
+</div>
+<div class="checkbox" id=option_ten> Options ten
+<input type="checkbox" name="Option ten" value="10">
+</div>
+</div>
 
-        </div>
-        <div class="checkbox"> Option five
-            <input type="checkbox" name="Option five" value="5">
-        </div>
-        <div>
-            <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
-        </div>
-        <div>
-            <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
-        </div>
-        <div>
-            <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
-        </div>
-        <div>
-            <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
-        </div>
-        <div>
-            <img src="Images/mall1Rutor.svg" alt="" id=mallrutor_one>
-        </div>
-        <div class="checkbox"> Option six
-            <input type="checkbox" name="Option six" value="6">
-        </div>
-        <div class="checkbox"> Option seven
-            <input type="checkbox" name="Option seven" value="7">
-        </div>
-        <div class="checkbox"> Option eight
-            <input type="checkbox" name="Option eight" value="8">
-        </div>
-        <div class="checkbox"> Option nine
-            <input type="checkbox" name="Option nine" value="9">
-        </div>
-        <div class="checkbox"> Options ten
-            <input type="checkbox" name="Option ten" value="10">
-        </div>
-    </div>
 
+<!-- Forms -->
+<form id="FormsEditable">
+</form>
+
+
+
+<!-- Dinner schedule -->
+<div id="dinnerScheduleDiv">
+<h2 style="text-align: center;">Matsedel:</h2>
+<div  id="dinnerInputForm">
+    <form>
+        <label for="week">Vecka</label><br>
+        <input type="text" id="week" name="week" value=""><br>
+        <label for="monday">Måndag</label><br>
+        <input type="text" id="monday" name="monday" value=""><br>
+        <label for="tuseday">Tisdag</label><br>
+        <input type="text" id="tuesday" name="tuesday" value=""><br>
+        <label for="wednesday">Onsdag</label><br>
+        <input type="text" id="wednesday" name="wednesday" value=""><br>
+        <label for="thursday">Torsdag</label><br>
+        <input type="text" id="thursday" name="thursday" value=""><br>
+        <label for="friday">Fredag</label><br>
+        <input type="text" id="friday" name="friday" value=""><br>
+    </form>
+    <button type="button" onclick=SaveDinnerSchedule()><a>Spara</a></button>
+    <!-- Popup for dinner schedule -->
+    <span id="popup" class="popupBox">
+        <span class="popupArrow"></span>
+        <span class="popupMessageBox">
+            <span class="popupMessage">
+                <p color="white" type="body" id="popupText">
+                    
+                </p>
+            </span>
+        </span>
+    </span>
+</div>
+
+<!-- Dinner schedule table -->
+<div id="dinnerScheduleTable">
+    <form> 
+        <div>
+            <table id="dinner"></table>
+        </div>
+    </form>
+</div>
+
+</div>
 
         
-        <!-- Dinner schedule -->
-        <div id="dinnerScheduleDiv">
-            <h2 style="text-align: center;">Matsedel:</h2>
-            <div  id="dinnerInputForm">
-                <form>
-                    <label for="week">Vecka</label><br>
-                    <input type="text" id="week" name="week" value=""><br>
-                    <label for="monday">Måndag</label><br>
-                    <input type="text" id="monday" name="monday" value=""><br>
-                    <label for="tuseday">Tisdag</label><br>
-                    <input type="text" id="tuesday" name="tuesday" value=""><br>
-                    <label for="wednesday">Onsdag</label><br>
-                    <input type="text" id="wednesday" name="wednesday" value=""><br>
-                    <label for="thursday">Torsdag</label><br>
-                    <input type="text" id="thursday" name="thursday" value=""><br>
-                    <label for="friday">Fredag</label><br>
-                    <input type="text" id="friday" name="friday" value=""><br>
-                </form>
-                <button type="button" onclick=SaveDinnerSchedule()><a>Spara</a></button>
-                <!-- Popup for dinner schedule -->
-                <span id="popup" class="popupBox">
-                    <span class="popupArrow"></span>
-                    <span class="popupMessageBox">
-                        <span class="popupMessage">
-                            <p color="white" type="body" id="popupText">
-                                
-                            </p>
-                        </span>
-                    </span>
-                </span>
-            </div>
-            
-            <!-- Dinner schedule table -->
-            <div id="dinnerScheduleTable">
-                <form> 
-                    <div>
-                        <table id="dinner"></table>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-
-
-
-
         
-        <div id="textInputDiv">
-            <h2 style="margin-top: 2%;">Text i mall (LINN sektioner)</h2>
-            <form id="textInputForm">
-                <label for="textInput">Text Input</label><br>
-                <input type="text" id="textInput" name="textInput" value=""><br>
-            </form> 
-        </div>
-        <!-- Input for templates -->
-        <div class="templateInputDiv">
-            <div class="inputBox">
-                <img id="imgInput1"src="Images/mall1Rutor.svg" class="templateInputImg">
-                <div class="inputDiv">
-                    <label for="textInput">Text ruta:</label><br>
-                    <textarea type="text" id="textInput1" name="textInput" value="" class="textArea"></textarea><br>
-                    <label for="img">Bild:</label><br>
-                    <input type="file" id="img" name="img" accept="image/*">
-                    <input type="submit" value="Ladda upp"><br>
-                    <label for="img">Video:</label><br>
-                    <input type="file" id="img" name="img" accept="image/*">
-                    <input type="submit" value="Ladda upp">
-                    <br>
-                    <br> <!-- Number of br varies depending on above content  -->
-
-    <button class="previewTemplateButton" type='button' onclick=ShowTemplate()>Visa</button>
-                </div>
-            </div>
-        </div> 
-   
-    
-
-
-
-    <!-- Preview -->
-    <h1 style="text-align: center;">Förhandsvisning:</h1> 
-    <section id="preview">
-        
-    </section>
 
 
 </body>
