@@ -35,10 +35,17 @@ function GetTextInput() {
 }
 function GetImgInput() {
     return '<tr>' +
-'				<label> Bild:</label>'+
-'				<input type="text" id="week" name="week" value="">'+
-'				<label> Video:</label>'+
-'				<input type="text" id="week" name="week" value=""><br><br>'+
+'			<label> Bild:</label>'+
+            '<form action="/action_page.php">'+
+            '  <input type="file" id="myFile" name="filename">'+
+            '  <input type="submit">'+
+            '</form> <br>'+
+'           </tr>' ;
+}
+function GetVideoInput() {
+    return '<tr>'
+'			<label> Video:</label>'+
+'           <input type="text" id="week" name="week" value=""><br><br>'+
 '			</tr>';
 }
 function GetCountdownInput() {
