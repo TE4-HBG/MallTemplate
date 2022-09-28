@@ -1,8 +1,10 @@
 //This is a function for pic, text, time table...//
+var LinnInputID = 1;
+
 function PrintInputBorder(Arr) {
     var Text = document.getElementById('FormsEditable').innerHTML;
 
-    Text += '<div id="Forms">' +
+    Text += '<div class="Forms" id=input'+ LinnInputID + '>' +
             '<div class="UpdateForms">' +
             '<table>';
 
@@ -23,21 +25,16 @@ function PrintInputBorder(Arr) {
            }
 
    Text +=	'<button type="button" onclick=SaveDinnerSchedule()><a>Visa</a></button>'+
-            '<button style ="margin-left: 10px; "type="button"><a>X</a></button>'+
+            '<button style ="margin-left: 10px; "type="button" onclick=DeleteInputBorder('+ LinnInputID + ')><a>X</a></button>'+
             '</table>'+
             '</div>' +
             '</div>';
 
     document.getElementById('FormsEditable').innerHTML = Text;
+    LinnInputID++;
 }
 
 
-
-
-
-function GetTemplateImage() {
-    return '<img src="' + document.getElementById + " class='templateImg'>"
-}
 function GetTextInput() {
     return  '<label> Text:</label>' +
            '<input type="text" id="week" name="week" value=""><br><br>';
@@ -58,6 +55,7 @@ function GetCountdownInput() {
 				'<input type="text" id="week" name="week" value=""><br><br>';
 }
 
-
-
+function DeleteInputBorder(LinnInputID) {
+    document.getElementById('input'+LinnInputID).remove();
+}
 

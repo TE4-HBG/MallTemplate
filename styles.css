@@ -86,7 +86,7 @@ table, th, td {
     float: right;
     margin: 1px;
 }
-#Forms {
+.Forms {
     border: 2px solid black;
     width: 39%;
     padding: 2px;
