@@ -27,32 +27,29 @@ function PrintInputBorder(Arr) {
     document.getElementById('FormsEditable').innerHTML = Text;
 }
 
+
+
+
+
+
 function GetTextInput() {
-    return  '<tr>' +
-           '<label> Text:</label>' +
-           '<input type="text" id="week" name="week" value=""><br><br>' +
-           '</tr>';
+    return  '<label> Text:</label>' +
+           '<input type="text" id="week" name="week" value=""><br><br>';
 }
 function GetImgInput() {
-    return '<tr>' +
-'			<label> Bild:</label>'+
+    return  '<label> Bild:</label>' +
             '<form action="/action_page.php">'+
             '  <input type="file" id="myFile" name="filename">'+
             '  <input type="submit">'+
-            '</form> <br>'+
-'           </tr>' ;
+            '</form> <br>';
 }
 function GetVideoInput() {
-    return '<tr>' +
-'			<label> Video:</label>'+
-'           <input type="text" id="week" name="week" value=""><br><br>'+
-'			</tr>';
+    return  '<label> Video:</label>' +
+           '<input type="text" id="week" name="week" value=""><br><br>';
 }
 function GetCountdownInput() {
-    return '<tr>' +
-'				<label> Tid:</label>'+
-'				<input type="text" id="week" name="week" value=""><br><br>'+
-'			</tr>';
+    return '<label> Tid:</label>' +
+				'<input type="text" id="week" name="week" value=""><br><br>';
 }
 
 
