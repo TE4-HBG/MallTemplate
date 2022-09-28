@@ -43,15 +43,13 @@ function GetImgInput() {
 '           </tr>' ;
 }
 function GetVideoInput() {
-    return '<tr>'
+    return '<tr>' +
 '			<label> Video:</label>'+
 '           <input type="text" id="week" name="week" value=""><br><br>'+
 '			</tr>';
 }
 function GetCountdownInput() {
-    return '<tr>'+
-'				<label> Ordning:</label>'+
-'				<input type="text" id="week" name="week" value="">'+
+    return '<tr>' +
 '				<label> Tid:</label>'+
 '				<input type="text" id="week" name="week" value=""><br><br>'+
 '			</tr>';
