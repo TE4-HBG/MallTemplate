@@ -37,7 +37,7 @@ table, th, td {
 #dinner {
     width: 25%;
     position: absolute;
-    padding-left: 10px;
+    margin-left: 10px;
 }
 #textInputDiv {
     padding-left: 10%;

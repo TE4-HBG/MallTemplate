@@ -4,10 +4,13 @@ function PrintInputBorder(Arr) {
 
     Text += '<div id="Forms">' +
             '<div class="UpdateForms">' +
-           '<table>';
+            '<table>';
 
            if (Arr.includes('IMG')) {
                Text += GetImgInput();
+           }
+           if (Arr.includes('IMG1')) {
+            Text += GetImgInput();
            }
            if (Arr.includes('TEXT')) {
                Text += GetTextInput();
@@ -20,39 +23,43 @@ function PrintInputBorder(Arr) {
            }
 
    Text +=	'<button type="button" onclick=SaveDinnerSchedule()><a>Visa</a></button>'+
-'	 		</table>'+
-'			</div>' +
-           '</div>';
+            '<button style ="margin-left: 10px; "type="button"><a>X</a></button>'+
+            '</table>'+
+            '</div>' +
+            '</div>';
 
     document.getElementById('FormsEditable').innerHTML = Text;
 }
 
 function GetTextInput() {
-    return  '<tr>' +
+    return '<tr>' +
            '<label> Text:</label>' +
            '<input type="text" id="week" name="week" value=""><br><br>' +
            '</tr>';
 }
 function GetImgInput() {
     return '<tr>' +
-'			<label> Bild:</label>'+
+            '<label> Bild:</label>'+
             '<form action="/action_page.php">'+
             '  <input type="file" id="myFile" name="filename">'+
             '  <input type="submit">'+
             '</form> <br>'+
-'           </tr>' ;
-}
-function GetVideoInput() {
-    return '<tr>' +
-'			<label> Video:</label>'+
-'           <input type="text" id="week" name="week" value=""><br><br>'+
-'			</tr>';
+            '<label> Video:</label>'+
+            '<form action="/action_page.php">'+
+            '  <input type="file" id="myFile" name="filename">'+
+            '  <input type="submit">'+
+            '</form> <br>'+
+            '</tr>' ;
 }
 function GetCountdownInput() {
     return '<tr>' +
-'				<label> Tid:</label>'+
-'				<input type="text" id="week" name="week" value=""><br><br>'+
-'			</tr>';
+            '<label> Tid:</label>'+
+            '<input type="text" id="week" name="week" value=""><br><br>'+
+            '</tr>';
+}
+
+function DeleteBorder() {
+    
 }
 
 
