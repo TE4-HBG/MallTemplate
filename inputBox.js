@@ -35,7 +35,9 @@ function PrintInputBorder(Arr) {
 
 
 
-
+function GetTemplateImage() {
+    return '<img src="' + document.getElementById + " class='templateImg'>"
+}
 function GetTextInput() {
     return  '<label> Text:</label>' +
            '<input type="text" id="week" name="week" value=""><br><br>';

@@ -104,7 +104,6 @@ table, th, td {
 .UpdateForms {
     border: 2px solid black;
     border-radius: 15px;
-    width: 90%;
     margin: 8px;
 }
 #Week {
@@ -207,7 +206,7 @@ p.popupMessage {
 text-align: center;
 font-size: 30px;
 }
-img{
+.templateImg{
     width:1fr;
     height:400px;
 }
