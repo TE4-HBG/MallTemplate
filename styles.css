@@ -26,7 +26,10 @@ table, th, td {
     text-align: center;
 }
 
-/* dinner styling */
+
+
+
+/* dinner schedule styling */
 #dinnerScheduleDiv {
     float: left;
     border: 1px solid black;
@@ -62,6 +65,65 @@ table, th, td {
     width: 200px;
     text-align: center;
 }
+#MatsedelBorder {
+    border: 1px solid black;
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+#WeekBorder {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+#Heading {
+    text-align: center;
+}
+#WholeMatsedelBoard {
+    border: 2px solid black;
+    height: 500px;
+    width: 60%;
+    float: right;
+    margin: 1px;
+}
+#Forms {
+    border: 2px solid black;
+    width: 39%;
+    padding: 2px;
+    margin: 10px;
+    float:left;
+}
+.AlignCenter {
+    display: inline;
+}
+.MatsedelText {
+    border: 1px solid black;
+    text-align: center;
+    width: 200px;
+}
+.UpdateForms {
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 90%;
+    margin: 8px;
+}
+#Week {
+    width: 50%;
+}
+.AlignEnd {
+    text-align: left;
+}
+#weekTableRow {
+width: 50px;
+text-align: center;
+}
+#tableRemoveWeek {
+width: 60px;
+text-align:center;
+}
+
+
+
 
 /* popup */
 .popupBox {
@@ -120,65 +182,11 @@ p.popupMessage {
     text-transform: none;
     text-align: center;
 }
-#MatsedelBorder {
-    border: 1px solid black;
-    float: left;
-    width: 50%;
-    text-align: center;
-}
-#WeekBorder {
-    width: 50%;
-    float: left;
-    text-align: center;
-}
-#Heading {
-    text-align: center;
-}
-.MatsedelDiv {
-    /* EMPTY */
-}
-#WholeMatsedelBoard {
-    border: 2px solid black;
-    height: 500px;
-    width: 60%;
-    float: right;
-    margin: 1px;
-}
-#Forms {
-    border: 2px solid black;
-    width: 39%;
-    padding: 2px;
-    margin: 10px;
-    float:left;
-}
-.AlignCenter {
-    display: inline;
-}
-.MatsedelText {
-    border: 1px solid black;
-    text-align: center;
-    width: 200px;
-}
-.UpdateForms {
-    border: 2px solid black;
-    border-radius: 15px;
-    width: 90%;
-    margin: 8px;
-}
-#Week {
-    width: 50%;
-}
-.AlignEnd {
-    text-align: left;
-}
-#weekTableRow {
-width: 50px;
-text-align: center;
-}
-#tableRemoveWeek {
-width: 60px;
-text-align:center;
-}
+
+
+
+
+
 /*INPUT IMG CSS*/
 .grid-container{
     touch-action: none;
@@ -203,7 +211,6 @@ img{
     width:1fr;
     height:400px;
 }
-
 .checkbox{
     background-color: rgb(61, 61, 61);
 }
