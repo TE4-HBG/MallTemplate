@@ -1,59 +1,69 @@
-//This is a function for pic, text, time table...//
-var LinnInputID = 1;
-
-function PrintInputBorder(Arr) {
+ //This is a function for pic, text, time table...//
+ function PrintInputBorder(Arr) {
     var Text = document.getElementById('FormsEditable').innerHTML;
 
-    Text += '<div class="Forms" id=input'+ LinnInputID + '>' +
+    Text += '<div id="' + Arr[0] + '">' +
             '<div class="UpdateForms">' +
-            '<table>';
+           '<table>';
 
-           if (Arr.includes('IMG')) {
-               Text += GetImgInput();
-           }
-           if (Arr.includes('IMG1')) {
-            Text += GetImgInput();
-           }
-           if (Arr.includes('TEXT')) {
-               Text += GetTextInput();
-           }
-           if (Arr.includes('TEXT1')) {
-            Text += GetTextInput();
-           }
-           if (Arr.includes('COUNTDOWN')) {
-               Text += GetCountdownInput();
-           }
+   if (Arr.includes('IMG')) {
+       Text += GetImgInput();
+   }
+   if (Arr.includes('TEXT')) {
+       Text += GetTextInput();
+   }
+   if (Arr.includes('COUNTDOWN')) {
+       Text += GetCountdownInput();
+   }
 
-   Text +=	'<button type="button" onclick=SaveDinnerSchedule()><a>Visa</a></button>'+
-            '<button style ="margin-left: 10px; "type="button" onclick=DeleteInputBorder('+ LinnInputID + ')><a>X</a></button>'+
-            '</table>'+
-            '</div>' +
-            '</div>';
+   Text +=	'<button type="button" onclick="Save(' + Arr[0] + ')"><a>Visa</a></button>'+
+'	 		</table>'+
+'			</div>' +
+           '</div>';
 
     document.getElementById('FormsEditable').innerHTML = Text;
-    LinnInputID++;
 }
-
-
 function GetTextInput() {
-    return  '<label> Text:</label>' +
-           '<input type="text" id="week" name="week" value=""><br><br>';
+    return  '<tr>' +
+           '<label> Text:</label>' +
+           '<input type="text" id="TEXT" value=""><br><br>' +
+           '</tr>';
 }
 function GetImgInput() {
-    return  '<label> Bild:</label>' +
-            '<form action="/action_page.php">'+
-            '  <input type="file" id="myFile" name="filename">'+
-            '  <input type="submit">'+
-            '</form> <br>';
-}
-function GetVideoInput() {
-    return  '<label> Video:</label>' +
-           '<input type="text" id="week" name="week" value=""><br><br>';
+    return '<tr>' +
+'				<label> Bild:</label>'+
+'				<input type="text" id="IMG" value="">'+
+'			</tr>';
 }
 function GetCountdownInput() {
-    return '<label> Tid:</label>' +
-				'<input type="text" id="week" name="week" value=""><br><br>';
+    return '<tr>'+
+'				<label> Ordning:</label>'+
+'				<input type="text" id="week" name="week" value="">'+
+'				<label> Tid:</label>'+
+'				<input type="date" id="start" name="trip-start" value="2018-07-22"'+
+'			</tr>';
 }
+
+function specialRNG() {
+   var today = new Date();
+   var today_abs = new Date();
+   today_abs.setHours(0);
+   today_abs.setMinutes(0);
+   today_abs.setSeconds(0);
+   today_secs = (today.getTime() - today_abs.getTime()) / 1000;
+   return today_secs;
+
+}
+
+
+function Save(x) {
+   console.log('tmp');
+   console.log(x);
+   let parent = document.getElementById(x);
+   console.log(parent.childNodes);
+
+}
+
 
 function DeleteInputBorder(LinnInputID) {
     document.getElementById('input'+LinnInputID).remove();
