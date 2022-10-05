@@ -25,7 +25,7 @@ function SaveDinnerSchedule() { // Lägg till kod för att spara till databas
     "<td>" + (weekList[(weekList.length -1)].wednesday).toString() + "</td>" +
     "<td>" + (weekList[(weekList.length -1)].thursday).toString() + "</td>" +
     "<td>" + (weekList[(weekList.length -1)].friday).toString() + "</td>" + 
-    "<td style='text-align: center'><button type='button' onclick=DeleteWeek(" + weekList[(weekList.length -1)].week + ")><a>x</a></button></td></tr>";
+    "<td style='text-align: center'><button class='delBtn' type='button' onclick=DeleteWeek(" + weekList[(weekList.length -1)].week + ")><a>x</a></button></td></tr>";
     document.getElementById('dinner').innerHTML = dinnerList;
   }
 }

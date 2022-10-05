@@ -3,11 +3,11 @@ function PrintInputBorder(Arr) {
     console.log(Arr[0]);
     Text += '<div id="' + Arr[0] + '">' +
             '<div class="UpdateForms">' +
-        '<button type="button" class="delBtn" onclick=DeleteInputBorder("' + Arr[0] + '")>X</button>' +
-            '<br>' +
+            '<button type="button" class="delBtn" onclick=DeleteInputBorder("' + Arr[0] + '")>X</button>' +
+            '<h4>' + Arr[0] + '</h4>' +
             '<input type="number" id="quantity" name="quantity" min="0" max="15" value="5">' +
             '<label> Hur många minuter ska sidan visas? (0 = för alltid) </label>' +
-           '<h4>' + Arr[0] + '</h4>';
+            '<br>';
 
 let textAmount = 0;
 let imgAmount = 0;
@@ -44,7 +44,7 @@ function GetImgInput(spec) {
 }
 function GetCountdownInput() {
     return '<label> Countdown: </label>'+
-                '<input type="text" id="week" name="week" value="">'+
+                '<input type="text"  value="">'+
                 '<label> Tid: </label>'+
                 '<input type="date" id="start" name="trip-start" value="2018-07-22"' +
                 '<br></br>';
