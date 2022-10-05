@@ -46,48 +46,60 @@
 <form id="FormsEditable">
 </form>
 
+
+<!-- Countdown Input -->
+<div id="countdownInputForm">
+    <form>
+    <label> Countdown: </label>
+    <input type="text"  value="">
+    <label> Tid: </label>
+    <input type="date" id="start" name="trip-start" value="2018-07-22">
+    </form>
+    <br></br>
+</div>
+
+
 <!-- Dinner schedule -->
 <div id="dinnerScheduleDiv">
-<h2 style="text-align: center;">Matsedel:</h2>
-<div  id="dinnerInputForm">
-    <form>
-        <label for="week">Vecka</label><br>
-        <input type="text" id="week" name="week" value=""><br>
-        <label for="monday">Måndag</label><br>
-        <input type="text" id="monday" name="monday" value=""><br>
-        <label for="tuseday">Tisdag</label><br>
-        <input type="text" id="tuesday" name="tuesday" value=""><br>
-        <label for="wednesday">Onsdag</label><br>
-        <input type="text" id="wednesday" name="wednesday" value=""><br>
-        <label for="thursday">Torsdag</label><br>
-        <input type="text" id="thursday" name="thursday" value=""><br>
-        <label for="friday">Fredag</label><br>
-        <input type="text" id="friday" name="friday" value=""><br>
-    </form>
-    <br>
-    <button type="button" onclick=SaveDinnerSchedule()><a>Spara</a></button>
-    <!-- Popup for dinner schedule -->
-    <span id="popup" class="popupBox">
-        <span class="popupArrow"></span>
-        <span class="popupMessageBox">
-            <span class="popupMessage">
-                <p color="white" type="body" id="popupText">
-                    
-                </p>
+    <h2 style="text-align: center;">Matsedel:</h2>
+    <div  id="dinnerInputForm">
+        <form>
+            <label for="week">Vecka</label><br>
+            <input type="text" id="week" name="week" value=""><br>
+            <label for="monday">Måndag</label><br>
+            <input type="text" id="monday" name="monday" value=""><br>
+            <label for="tuseday">Tisdag</label><br>
+            <input type="text" id="tuesday" name="tuesday" value=""><br>
+            <label for="wednesday">Onsdag</label><br>
+            <input type="text" id="wednesday" name="wednesday" value=""><br>
+            <label for="thursday">Torsdag</label><br>
+            <input type="text" id="thursday" name="thursday" value=""><br>
+            <label for="friday">Fredag</label><br>
+            <input type="text" id="friday" name="friday" value=""><br>
+        </form>
+        <br>
+        <button type="button" onclick=SaveDinnerSchedule()><a>Spara</a></button>
+        <!-- Popup for dinner schedule -->
+        <span id="popup" class="popupBox">
+            <span class="popupArrow"></span>
+            <span class="popupMessageBox">
+                <span class="popupMessage">
+                    <p color="white" type="body" id="popupText">
+                        
+                    </p>
+                </span>
             </span>
         </span>
-    </span>
-</div>
+    </div>
 
-<!-- Dinner schedule table -->
-<div id="dinnerScheduleTable">
-    <form> 
-        <div>
-            <table id="dinner"></table>
-        </div>
-    </form>
-</div>
-
+    <!-- Dinner schedule table -->
+    <div id="dinnerScheduleTable">
+        <form> 
+            <div>
+                <table id="dinner"></table>
+            </div>
+        </form>
+    </div>
 </div>
 
         

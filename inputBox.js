@@ -46,7 +46,7 @@ function GetCountdownInput() {
     return '<label> Countdown: </label>'+
                 '<input type="text"  value="">'+
                 '<label> Tid: </label>'+
-                '<input type="date" id="start" name="trip-start" value="2018-07-22"' +
+                '<input type="date" id="start" name="trip-start" value="2018-07-22">' +
                 '<br></br>';
 }
 
