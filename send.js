@@ -41,3 +41,10 @@ function send(data) {
     }
     return val;
 }
+
+
+
+
+
+//Note to self
+//KÖR FUNCTIONEN addX() OM DEN RETURNAR UNDEFINEN SKA DEN HA FUNKAT, KOLLA SEN SERVERN GENOM PUTTY OM DET KOM FRAM
