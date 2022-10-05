@@ -1,7 +1,7 @@
  //This is a function for pic, text, time table...//
  function PrintInputBorder(Arr) {
     var Text = document.getElementById('FormsEditable').innerHTML;
-
+    console.log(Arr[0]);
     Text += '<div id="' + Arr[0] + '">' +
             '<div class="UpdateForms">' +
            '<table>';

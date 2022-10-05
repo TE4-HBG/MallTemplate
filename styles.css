@@ -188,12 +188,10 @@ p.popupMessage {
 
 /*INPUT IMG CSS*/
 .grid-container{
-    touch-action: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
     grid-template-rows: 400px 60px 400px 60px ;
-    gap: 80px;
-   
+    gap: 80px;   
     padding: 10px;
     background-color: rgb(49, 49, 49);
 }
@@ -202,6 +200,10 @@ text-align: center;
 font-size: 30px;
 }
 .templateImg{
-    width:1fr;
     height:400px;
+}
+.bttnContainer {
+    width: 100%;
+    background-color: rgb(61, 61, 61);
+    height: 50px;
 }
