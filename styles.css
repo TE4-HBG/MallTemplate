@@ -188,17 +188,10 @@ p.popupMessage {
 
 /*INPUT IMG CSS*/
 .grid-container{
-    touch-action: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
     grid-template-rows: 400px 60px 400px 60px ;
-    grid-template-areas: 
-      "header header header header"
-      
-      "footer footer footer footer"
-      "";
-    gap: 10px;
-   
+    gap: 80px;   
     padding: 10px;
     background-color: rgb(49, 49, 49);
 }
@@ -207,18 +200,10 @@ text-align: center;
 font-size: 30px;
 }
 .templateImg{
-    width:1fr;
     height:400px;
 }
-.checkbox{
+.bttnContainer {
+    width: 100%;
     background-color: rgb(61, 61, 61);
-}
-#Button_Input{
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-#BorderButton {
-    width: 200px;
     height: 50px;
 }
