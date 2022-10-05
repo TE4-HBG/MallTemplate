@@ -1,47 +1,53 @@
- //This is a function for pic, text, time table...//
- function PrintInputBorder(Arr) {
+function PrintInputBorder(Arr) {
     var Text = document.getElementById('FormsEditable').innerHTML;
     console.log(Arr[0]);
     Text += '<div id="' + Arr[0] + '">' +
             '<div class="UpdateForms">' +
-           '<table>';
+        '<button type="button" class="delBtn" onclick=DeleteInputBorder("' + Arr[0] + '")>X</button>' +
+            '<br>' +
+            '<input type="number" id="quantity" name="quantity" min="0" max="15" value="5">' +
+            '<label> Hur många minuter ska sidan visas? (0 = för alltid) </label>' +
+           '<h4>' + Arr[0] + '</h4>';
 
-   if (Arr.includes('IMG')) {
-       Text += GetImgInput();
-   }
-   if (Arr.includes('TEXT')) {
-       Text += GetTextInput();
-   }
-   if (Arr.includes('COUNTDOWN')) {
-       Text += GetCountdownInput();
-   }
+let textAmount = 0;
+let imgAmount = 0;
+for (let index = 0; index < Arr.length; index++) {
+    if (Arr[index] === 'IMG') {
+        imgAmount++;
+        Text += GetImgInput(imgAmount);
+    }
+    if (Arr[index] === 'TEXT') {
+        textAmount++;
+        Text += GetTextInput(textAmount);
+    }
+    if (Arr[index] === 'COUNTDOWN') {
+        Text += GetCountdownInput();
+    }
+}
+
+    
 
    Text +=	'<button type="button" onclick="Save(' + Arr[0] + ')"><a>Visa</a></button>'+
-'	 		</table>'+
-'			</div>' +
+            '</div>' +
            '</div>';
 
     document.getElementById('FormsEditable').innerHTML = Text;
 }
-function GetTextInput() {
-    return  '<tr>' +
-           '<label> Text:</label>' +
-           '<input type="text" id="TEXT" value=""><br><br>' +
-           '</tr>';
+function GetTextInput(spec) {
+    return  '<label> Text ' + spec + ': </label>' +
+            '<input type="text" id="TEXT" name="' + spec + '" value=""><br>';
 }
-function GetImgInput() {
-    return '<tr>' +
-'				<label> Bild:</label>'+
-'				<input type="text" id="IMG" value="">'+
-'			</tr>';
+function GetImgInput(spec) {
+    return 	'<label> Bild ' + spec + ': </label>'+
+            '<input type="file" id="IMG" name="' + spec + '" accept="image/*">' +
+            '<br>';
 }
 function GetCountdownInput() {
-    return '<tr>'+
-'				<label> Ordning:</label>'+
-'				<input type="text" id="week" name="week" value="">'+
-'				<label> Tid:</label>'+
-'				<input type="date" id="start" name="trip-start" value="2018-07-22"'+
-'			</tr>';
+    return '<label> Countdown: </label>'+
+                '<input type="text" id="week" name="week" value="">'+
+                '<label> Tid: </label>'+
+                '<input type="date" id="start" name="trip-start" value="2018-07-22"' +
+                '<br></br>';
 }
 
 function specialRNG() {
@@ -66,6 +72,7 @@ function Save(x) {
 
 
 function DeleteInputBorder(LinnInputID) {
-    document.getElementById('input'+LinnInputID).remove();
+    console.log('trying to removed ' + LinnInputID);
+    document.getElementById(LinnInputID).remove();
 }
 

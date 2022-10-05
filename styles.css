@@ -2,6 +2,7 @@ body {
     margin-left: 0px;
     margin-bottom: 0px;
     margin-right: 0px;
+    background: url('https://cdn.discordapp.com/attachments/326375470125940736/1025290691422736395/tim_extra_zoom_120.gif');
     
 }
 input { /* Had to overwrite all input fields as divs enclosing inputs caused unnecessary padding. */
@@ -23,7 +24,6 @@ table, th, td {
 #FormsEditable {
     width: 48%;
     float: right;
-    text-align: center;
 }
 
 
@@ -105,6 +105,7 @@ table, th, td {
     border: 2px solid black;
     border-radius: 15px;
     margin: 8px;
+    padding: 20px;
 }
 #Week {
     width: 50%;
@@ -190,8 +191,7 @@ p.popupMessage {
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
-    grid-template-rows: 400px 60px 400px 60px ;
-    gap: 80px;   
+    gap: 10px;   
     padding: 10px;
     background-color: rgb(49, 49, 49);
 }
@@ -206,4 +206,16 @@ font-size: 30px;
     width: 100%;
     background-color: rgb(61, 61, 61);
     height: 50px;
+}
+
+#quantity {
+    width: 40px;
+}
+
+.delBtn {
+    background-color: red;
+    border-radius: 5px;
+    border: 2px solid darkred;
+    color: white;
+    float: right;
 }
