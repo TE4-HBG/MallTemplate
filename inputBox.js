@@ -20,9 +20,6 @@ for (let index = 0; index < Arr.length; index++) {
         textAmount++;
         Text += GetTextInput(textAmount);
     }
-    if (Arr[index] === 'COUNTDOWN') {
-        Text += GetCountdownInput();
-    }
 }
 
     
@@ -41,13 +38,6 @@ function GetImgInput(spec) {
     return 	'<label> Bild ' + spec + ': </label>'+
             '<input type="file" id="IMG" name="' + spec + '" accept="image/*">' +
             '<br>';
-}
-function GetCountdownInput() {
-    return '<label> Countdown: </label>'+
-                '<input type="text"  value="">'+
-                '<label> Tid: </label>'+
-                '<input type="date" id="start" name="trip-start" value="2018-07-22">' +
-                '<br></br>';
 }
 
 function specialRNG() {
