@@ -151,6 +151,18 @@ button:hover {
     margin-bottom: 7px;
 }
 
+.UpdateForms-saved {
+    background-color: rgb(47,47,47);
+    border: 5px dashed rgb(43, 43, 43);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.UpdateForms-saved > * {
+    margin-bottom: 7px;
+}
+
 #Week {
     width: 50%;
 }
@@ -261,4 +273,12 @@ p.popupMessage {
     filter: invert(0);
     background-color: red;
     transition: 0.2s;
+}
+
+
+
+#savedInputs {
+    width: 46%;
+    margin: 20px;
+    float: left;
 }

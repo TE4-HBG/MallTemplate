@@ -27,11 +27,11 @@ function addX() {
     let mall1 = new Template('2',1,jsonObject)
 
     tmp4.push(mall1);
-    send(JSON.stringify(tmp4));
+    Send(JSON.stringify(tmp4));
 }
 
 
-function send(data) {
+function Send(data) {
     const val = socket.readyState == WebSocket.OPEN;
     if(val) {
         console.log(data);
@@ -46,5 +46,3 @@ function send(data) {
 
 //Note to self
 //KÖR FUNCTIONEN addX() OM DEN RETURNAR UNDEFINEN SKA DEN HA FUNKAT, KOLLA SEN SERVERN GENOM PUTTY OM DET KOM FRAM
-
-

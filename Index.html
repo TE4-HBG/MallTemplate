@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <script src="inputBox.js"></script>
     <script src="dinner.js"></script>
@@ -27,7 +28,7 @@
             <div class="bttnContainer">
                 <button onclick="PrintInputBorder(['Template3','IMG'])">Lägg till Template 3</button>
             </div>
-        </div>  
+        </div>
         <div class="grid-item">
             <img class="templateImg" src="templates/template4/template4.svg">
             <div class="bttnContainer">
@@ -41,73 +42,75 @@
             </div>
         </div>
 
-      </div>
+    </div>
 
-      <!-- Forms -->
-<form id="FormsEditable">
-</form>
-
-
-<!-- Countdown Input -->
-<div id="countdownInputForm">
-    <h2 id="h2InCountdown">Countdown</h2>
-    <form id="formInCountdown">
-    <label> Text: </label>
-    <input type="text"  value=""><br><br>
-    <label> Datum: </label>
-    <input type="date" id="start" name="trip-start" value="2018-07-22">
-    <button id="btnInCountdown" type="button">Spara</button>
- 
+    <!-- Forms -->
+    <form id="FormsEditable">
     </form>
-</div>
 
 
-<!-- Dinner schedule -->
-<div id="dinnerScheduleDiv">
-    <h2 style="text-align: center;">Matsedel</h2>
-    <div  id="dinnerInputForm">
-        <form>
-            <label for="week">Vecka</label><br>
-            <input type="text" id="week" name="week" value=""><br>
-            <label for="monday">Måndag</label><br>
-            <input type="text" id="monday" name="monday" value=""><br>
-            <label for="tuseday">Tisdag</label><br>
-            <input type="text" id="tuesday" name="tuesday" value=""><br>
-            <label for="wednesday">Onsdag</label><br>
-            <input type="text" id="wednesday" name="wednesday" value=""><br>
-            <label for="thursday">Torsdag</label><br>
-            <input type="text" id="thursday" name="thursday" value=""><br>
-            <label for="friday">Fredag</label><br>
-            <input type="text" id="friday" name="friday" value=""><br>
+    <!-- Countdown Input -->
+    <div id="countdownInputForm">
+        <h2 id="h2InCountdown">Countdown</h2>
+        <form id="formInCountdown">
+            <label> Text: </label>
+            <input type="text" value=""><br><br>
+            <label> Datum: </label>
+            <input type="date" id="start" name="trip-start" value="2018-07-22">
+            <button id="btnInCountdown" type="button">Spara</button>
+
         </form>
-        <br>
-        <button type="button" onclick=SaveDinnerSchedule()><a>Spara</a></button>
-        <!-- Popup for dinner schedule -->
-        <span id="popup" class="popupBox">
-            <span class="popupArrow"></span>
-            <span class="popupMessageBox">
-                <span class="popupMessage">
-                    <p color="white" type="body" id="popupText">
-                        
-                    </p>
+    </div>
+
+
+    <!-- Dinner schedule -->
+    <div id="dinnerScheduleDiv">
+        <h2 style="text-align: center;">Matsedel</h2>
+        <div id="dinnerInputForm">
+            <form>
+                <label for="week">Vecka</label><br>
+                <input type="text" id="week" name="week" value=""><br>
+                <label for="monday">Måndag</label><br>
+                <input type="text" id="monday" name="monday" value=""><br>
+                <label for="tuseday">Tisdag</label><br>
+                <input type="text" id="tuesday" name="tuesday" value=""><br>
+                <label for="wednesday">Onsdag</label><br>
+                <input type="text" id="wednesday" name="wednesday" value=""><br>
+                <label for="thursday">Torsdag</label><br>
+                <input type="text" id="thursday" name="thursday" value=""><br>
+                <label for="friday">Fredag</label><br>
+                <input type="text" id="friday" name="friday" value=""><br>
+            </form>
+            <br>
+            <button type="button" onclick=SaveDinnerSchedule()><a>Spara</a></button>
+            <!-- Popup for dinner schedule -->
+            <span id="popup" class="popupBox">
+                <span class="popupArrow"></span>
+                <span class="popupMessageBox">
+                    <span class="popupMessage">
+                        <p color="white" type="body" id="popupText">
+
+                        </p>
+                    </span>
                 </span>
             </span>
-        </span>
+        </div>
+        <!-- Dinner schedule table -->
+        <div id="dinnerScheduleTable">
+            <form>
+                <div>
+                    <table id="dinner"></table>
+                </div>
+            </form>
+        </div>
     </div>
 
-    <!-- Dinner schedule table -->
-    <div id="dinnerScheduleTable">
-        <form> 
-            <div>
-                <table id="dinner"></table>
-            </div>
-        </form>
+    <div id="savedInputs">
+        
     </div>
-</div>
-
-        
-        
+    <button onclick="ActuallySave()" type="button" style="float: left;">bruh </button>
 
 
 </body>
-</html> 
+
+</html>

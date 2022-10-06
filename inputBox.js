@@ -1,7 +1,11 @@
+let allSaveInputs = [];
+
+
 function PrintInputBorder(Arr) {
     let Text = "";
     console.log(Arr[0]);
-    Text += '<div id="' + Arr[0] + '">' +
+    localStorage.setItem(Arr[0], Arr);
+    Text += '<div name="'+ Arr +'" id="' + Arr[0] + '">' +
         '<div class="UpdateForms">' +
         '<button type="button" class="delBtn" onclick=DeleteInputBorder("' + Arr[0] + '")>X</button>' +
         '<h4>' + Arr[0] + '</h4>' +
@@ -29,14 +33,26 @@ function PrintInputBorder(Arr) {
 
     document.getElementById('FormsEditable').innerHTML = Text;
 }
-function GetTextInput(spec) {
-    return '<label> Text ' + spec + ': </label>' +
+function GetTextInput(spec, readable = true, value = "") {
+    if (readable) {
+        return '<label> Text ' + spec + ': </label>' +
         '<input type="text" class="TEXT" name="' + spec + '" value=""><br>';
+    }
+    else {
+        return '<label> Text ' + spec + ': </label>' +
+        '<input readonly type="text" class="TEXT" name="' + spec + '" value="' + value + '"><br>';
+    }
 }
-function GetImgInput(spec) {
-    return '<label> Bild ' + spec + ': </label>' +
+function GetImgInput(spec, readonly = true, value = "") {
+    if (readonly) {
+        return '<label> Bild ' + spec + ': </label>' +
         '<input type="file" class="IMG" name="' + spec + '" accept="image/*">' +
         '<br>';
+    }
+    else {
+        return '<label>Bild ' + spec + ': ' + value + '</label>' +
+        '<br>';
+    }
 }
 
 function GetCountdownInput() {
@@ -78,7 +94,8 @@ async function Save(x) {
             };
 
 
-            send(new Template(minutes[0].value, x, jsonObject));
+            allSaveInputs.push(new Template(minutes[0].value, x, jsonObject));
+            PrintSavedInputs(minutes[0].value, x, [allTextInput[0].value, allImgInput[0].files[0].name]);
 
             break;
         case 'Template2':
@@ -89,7 +106,8 @@ async function Save(x) {
                 "text2": allTextInput[1].value
             }
 
-            send(new Template(minutes[0].value, x, jsonObject));
+            allSaveInputs.push(new Template(minutes[0].value, x, jsonObject));
+            PrintSavedInputs(minutes[0].value, x, [allTextInput[0].value, allTextInput[1].value]);
 
             break;
         case 'Template3':
@@ -100,7 +118,8 @@ async function Save(x) {
             };
 
 
-            send(new Template(minutes[0].value, x, jsonObject));
+            allSaveInputs.push(new Template(minutes[0].value, x, jsonObject));
+            PrintSavedInputs(minutes[0].value, x, [allImgInput[0].value]);
 
             break;
         case 'Template4':
@@ -112,8 +131,8 @@ async function Save(x) {
                 "image1": { type: allImgInput[0].files[0].type, data: await allImgInput[0].files[0].text() }
             };
 
-
-            send(new Template(minutes[0].value, x, jsonObject));
+            allSaveInputs.push(new Template(minutes[0].value, x, jsonObject));
+            PrintSavedInputs(x, [allTextInput[0].value, allImgInput[0].value]);
 
             break;
         case 'Template5':
@@ -125,8 +144,9 @@ async function Save(x) {
             }
 
 
-
-            send(new Template(minutes[0].value, x, jsonObject));
+            allSaveInputs.push(new Template(minutes[0].value, x, jsonObject));
+            PrintSavedInputs(minutes[0].value, x, [allTextInput[0].value, allTextInput[1].value]);
+            console.log("hello");
 
             break;
         case 'Template6':
@@ -137,10 +157,51 @@ async function Save(x) {
 
 
 }
-
+function ActuallySave() {
+    Send(allSaveInputs);
+    window.location.reload();
+}
 
 function DeleteInputBorder(LinnInputID) {
     console.log('trying to removed ' + LinnInputID);
     document.getElementById(LinnInputID).remove();
 }
+function test(x) {
+    console.log(document.getElementById(x).name);
+    return document.getElementById(x).name;
+}
+function PrintSavedInputs(minutes, x, newArray) {
+    let container = document.getElementById('savedInputs').innerHTML;
+    let inputBox = document.getElementById(x);
+    let textAmount = 0;
+    let imgAmount = 0;
+    let Arr = localStorage.getItem(x);
+    Arr = Arr.split(",");
+    
+    container += '<div name="'+ Arr +'" id="' + Arr[0] + '-saved">' +
+    '<div class="UpdateForms-saved">' +
+    '<button type="button" class="delBtn" onclick=DeleteInputBorder("' + Arr[0] + '-saved")>X</button>' +
+    '<h4>' + Arr[0] + '</h4>' +
+    '<input readonly type="number" class="quantity" name="quantity" min="0" max="15" value="' + minutes + '">' +
+    '<br>';
+    
+    
+    
+    for (let index = 0; index < Arr.length; index++) {
+        console.log(1);
 
+        if (Arr[index] === 'IMG') {
+            imgAmount++;
+            container += GetImgInput(imgAmount, false, newArray[index -1]);
+        }
+        if (Arr[index] === 'TEXT') {
+            textAmount++;
+            container += GetTextInput(textAmount, false, newArray[index -1]);
+        }
+    }
+    container += '</div>' +
+    '</div>'
+
+    document.getElementById('savedInputs').innerHTML = container;
+
+}
