@@ -23,7 +23,6 @@ function PrintInputBorder(Arr) {
     }
 
 
-
     Text += '<button type="button" onclick=Save("' + Arr[0] + '")><a>Spara</a></button>' +
         '</div>' +
         '</div>';
@@ -39,6 +38,7 @@ function GetImgInput(spec) {
         '<input type="file" class="IMG" name="' + spec + '" accept="image/*">' +
         '<br>';
 }
+
 function GetCountdownInput() {
     return '<label> Countdown: </label>' +
         '<input type="text"  value="">' +
