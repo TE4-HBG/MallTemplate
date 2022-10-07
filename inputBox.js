@@ -63,6 +63,14 @@ function GetCountdownInput() {
         '<br></br>';
 }
 
+function _arrayBufferToBase64(blob) {
+    return new Promise((resolve, _) => {
+        const reader = new FileReader();
+        reader.onloadend = () => {resolve(reader.result); console.log(reader.result)};
+        reader.readAsDataURL(blob);
+    });
+}
+
 function specialRNG() {
     var today = new Date();
     var today_abs = new Date();
@@ -84,15 +92,25 @@ async function Save(x) {
     let allImgInput;
 
     switch (x) {
+        case 'formInCountdown':
+            allTextInput = inputBox.getElementsByClassName("TEXT");
+            let dateInput = inputBox.getElementsByClassName("DATE");
+            jsonObject = {
+                    "text": allTextInput,
+                    "date": dateInput
+                }
+                allSaveInputs.push(new Template(x, jsonObject));
+                
+
+            break;
         case 'Template1':
             allTextInput = inputBox.getElementsByClassName("TEXT");
             allImgInput = inputBox.getElementsByClassName("IMG");
             minutes = inputBox.getElementsByClassName('quantity');
             jsonObject = {
                 "text1": allTextInput[0].value,
-                "image1": { type: allImgInput[0].files[0].type, data: await allImgInput[0].files[0].text() }
+                "image1": await _arrayBufferToBase64(allImgInput[0].files[0])
             };
-
 
             allSaveInputs.push(new Template(minutes[0].value, x, jsonObject));
             PrintSavedInputs(minutes[0].value, x, [allTextInput[0].value, allImgInput[0].files[0].name]);
@@ -114,7 +132,7 @@ async function Save(x) {
             allImgInput = inputBox.getElementsByClassName("IMG");
             minutes = inputBox.getElementsByClassName('quantity');
             jsonObject = {
-                "image1": { type: allImgInput[0].files[0].type, data: await allImgInput[0].files[0].text() }
+                "image1": await _arrayBufferToBase64(allImgInput[0].files[0])
             };
 
 
@@ -128,7 +146,7 @@ async function Save(x) {
             minutes = inputBox.getElementsByClassName('quantity');
             jsonObject = {
                 "text1": allTextInput[0].value,
-                "image1": { type: allImgInput[0].files[0].type, data: await allImgInput[0].files[0].text() }
+                "image1": await _arrayBufferToBase64(allImgInput[0].files[0])
             };
 
             allSaveInputs.push(new Template(minutes[0].value, x, jsonObject));
@@ -158,7 +176,9 @@ async function Save(x) {
 
 }
 function ActuallySave() {
-    Send(allSaveInputs);
+    if(Send(JSON.stringify(allSaveInputs))) {
+        console.log("bruh");
+    };
     window.location.reload();
 }
 
@@ -167,8 +187,8 @@ function DeleteInputBorder(LinnInputID) {
     document.getElementById(LinnInputID).remove();
 }
 function test(x) {
-    console.log(document.getElementById(x).name);
-    return document.getElementById(x).name;
+    console.log(document.getElementById(x));
+    return document.getElementById(x);
 }
 function PrintSavedInputs(minutes, x, newArray) {
     let container = document.getElementById('savedInputs').innerHTML;
