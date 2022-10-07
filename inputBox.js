@@ -84,7 +84,7 @@ function specialRNG() {
 
 
 async function Save(x) {
-
+    console.log(x);
     let inputBox = document.getElementById(x);
     let allTextInput;
     let minutes;
@@ -92,17 +92,17 @@ async function Save(x) {
     let allImgInput;
 
     switch (x) {
-        case 'formInCountdown':
+        /*case 'formInCountdown':
             allTextInput = inputBox.getElementsByClassName("TEXT");
             let dateInput = inputBox.getElementsByClassName("DATE");
             jsonObject = {
                     "text": allTextInput,
                     "date": dateInput
                 }
-                allSaveInputs.push(new Template(x, jsonObject));
-                
+                allSaveInputs.push(new Template(0, x, jsonObject));
+                console.log("hi");
 
-            break;
+            break;*/
         case 'Template1':
             allTextInput = inputBox.getElementsByClassName("TEXT");
             allImgInput = inputBox.getElementsByClassName("IMG");
@@ -179,7 +179,7 @@ function ActuallySave() {
     if(Send(JSON.stringify(allSaveInputs))) {
         console.log("bruh");
     };
-    window.location.reload();
+    //window.location.reload();
 }
 
 function DeleteInputBorder(LinnInputID) {
@@ -187,8 +187,10 @@ function DeleteInputBorder(LinnInputID) {
     document.getElementById(LinnInputID).remove();
 }
 function test(x) {
-    console.log(document.getElementById(x));
-    return document.getElementById(x);
+    for (let index = 0; index < allSaveInputs.length; index++) {
+        const element = allSaveInputs[index];
+        console.log(element);
+    }
 }
 function PrintSavedInputs(minutes, x, newArray) {
     let container = document.getElementById('savedInputs').innerHTML;

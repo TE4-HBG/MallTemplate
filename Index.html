@@ -58,7 +58,7 @@
             <input type="text" id="TEXT" value=""><br><br>
             <label> Datum: </label>
             <input type="date" id="DATE" name="trip-start" value="2003-02-30">
-            <button id="btnInCountdown" onclick="Save(formInCountdown)" type="button">Spara</button>
+            <button id="btnInCountdown" onclick="Save('formInCountdown')" type="button">Spara</button>
 
         </form>
     </div>
@@ -83,7 +83,7 @@
                 <input type="text" id="friday" name="friday" value=""><br>
             </form>
             <br>
-            <button type="button" onclick=SaveDinnerSchedule()><a>Spara</a></button>
+            <button type="button" onclick=SaveDinnerSchedule()>Spara</button>
             <!-- Popup for dinner schedule -->
             <span id="popup" class="popupBox">
                 <span class="popupArrow"></span>
@@ -109,7 +109,7 @@
     <div id="savedInputs">
         
     </div>
-    <button onclick="ActuallySave()" type="button" style="float: left;">Publish </button>
+    <button onclick="ActuallySave()" type="button" style="float: left;">Publicera </button>
 
 
 </body>
