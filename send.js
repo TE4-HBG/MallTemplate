@@ -35,7 +35,7 @@ function Send(data) {
     const val = socket.readyState == WebSocket.OPEN;
     if(val) {
         console.log(data);
-        socket.send(JSON.stringify(data));
+        socket.send(data);
     }
     return val;
 }
