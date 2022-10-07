@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<head >
     <script src="inputBox.js"></script>
     <script src="dinner.js"></script>
     <script src="send.js"></script>
+    <script src="padLock.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -54,10 +55,10 @@
         <h2 id="h2InCountdown">Countdown</h2>
         <form id="formInCountdown">
             <label> Text: </label>
-            <input type="text" value=""><br><br>
+            <input type="text" id="TEXT" value=""><br><br>
             <label> Datum: </label>
-            <input type="date" id="start" name="trip-start" value="2018-07-22">
-            <button id="btnInCountdown" type="button">Spara</button>
+            <input type="date" id="DATE" name="trip-start" value="2003-02-30">
+            <button id="btnInCountdown" onclick="Save('formInCountdown')" type="button">Spara</button>
 
         </form>
     </div>
@@ -82,7 +83,7 @@
                 <input type="text" id="friday" name="friday" value=""><br>
             </form>
             <br>
-            <button type="button" onclick=SaveDinnerSchedule()><a>Spara</a></button>
+            <button type="button" onclick=SaveDinnerSchedule()>Spara</button>
             <!-- Popup for dinner schedule -->
             <span id="popup" class="popupBox">
                 <span class="popupArrow"></span>
@@ -108,7 +109,7 @@
     <div id="savedInputs">
         
     </div>
-    <button onclick="ActuallySave()" type="button" style="float: left;">bruh </button>
+    <button onclick="ActuallySave()" type="button" style="float: left;">Publicera </button>
 
 
 </body>
